@@ -1,5 +1,6 @@
 package org.example;
 
+
 public class HelloApp {
 
     public static void main(String[] args) {
@@ -9,17 +10,15 @@ public class HelloApp {
         } else {
 
             StringBuilder names = new StringBuilder();
-            boolean first = true;
 
             for (String name : args) {
-                if (!first) {
-                    names.append(", ");
-                }
-                names.append(name);
-                first = false;
+                names.append(name).append(", ");
             }
 
-            System.out.println("Hello, " + names + "!");
+            // Remove trailing ", "
+            String finalNames = names.substring(0, names.length() - 2);
+
+            System.out.println("Hello, " + finalNames + "!");
         }
     }
 
